@@ -16,7 +16,16 @@ uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx", "xls"])
 chunk_size = st.number_input("Rows per file", value=1000, min_value=1, step=1)
 
 if uploaded_file and st.button("Split"):
-    df = pd.read_excel(uploaded_file)
+    file_name = uploaded_file.name.lower()
+
+    if file_name.endswith(".xlsx"):
+        df = pd.read_excel(uploaded_file, engine="openpyxl")
+    elif file_name.endswith(".xls"):
+        df = pd.read_excel(uploaded_file, engine="xlrd")
+    else:
+        st.error("Unsupported file format")
+        st.stop()
+
     base_name = uploaded_file.name.rsplit(".", 1)[0]
     zip_filename = f"{base_name}_split.zip"
 
