@@ -23,7 +23,7 @@ if "ready" not in st.session_state:
 # Domain Grouper config
 # =========================
 PROJECT_PATTERNS = {
-    "1GO": ["1go"],
+    "1Go": ["1go"],
     "Drip": ["drip"],
     "Fresh": ["fresh"],
     "Galaktika 15": ["martin"],
@@ -36,8 +36,8 @@ PROJECT_PATTERNS = {
     "Legzo": ["legzo"],
     "Lex": ["lex"],
     "Monro": ["monro"],
-    "ROX": ["rox"],
-    "SOL": ["sol"],
+    "Rox": ["rox"],
+    "Sol": ["sol"],
     "Starda": ["starda"],
     "Flagman": ["flagman"],
 }
